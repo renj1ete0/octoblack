@@ -1,24 +1,11 @@
-# octoblack
+# OctoBlack
+OctoBlack is a module-similarity checker which checks the similarity of a specified list of modules against provided baskets of modules.
 
-## Project setup
-```
-npm install
-```
+It is built as a web application built using VueJS and PouchDB to be entirely run on client-side (serverless).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tech Stack
+- Vue 3
+- Bootstrap 5
+- Typescript
+- PouchDB
+- vue-chartjs
