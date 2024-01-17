@@ -1,12 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import IndexView from '../views/IndexView.vue'
+import SelModules from '../views/SelModules.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'index',
+      component: IndexView
+    },
+    {
+      path: '/selModules',
+      name: 'modules',
+      component: SelModules
+    },
+    {
+      path: '/test',
+      name: 'hometest',
       component: HomeView
     },
     {
@@ -19,5 +31,6 @@ const router = createRouter({
     }
   ]
 })
+
 
 export default router
