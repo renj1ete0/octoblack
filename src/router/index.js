@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import IndexView from '../views/IndexView.vue'
-import SelModules from '../views/SelModules.vue'
+import SelModules from '../views/ModSelection.vue'
+import ModuleSimilarity from '../views/ModSimilarity.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,9 +13,14 @@ const router = createRouter({
       component: IndexView
     },
     {
-      path: '/selModules',
+      path: '/modselection',
       name: 'modules',
       component: SelModules
+    },
+    {
+      path: '/modsimilarity',
+      name: 'modulesimilarity',
+      component: ModuleSimilarity
     },
     {
       path: '/test',

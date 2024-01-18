@@ -21,7 +21,7 @@ import { RouterLink } from 'vue-router'
               Module Similarity Checker
             </a>
             <ul class="dropdown-menu" active-class="active">
-              <RouterLink class="dropdown-item" to="/SelModules" active-class="active">Select from Dropdown</RouterLink>
+              <RouterLink class="dropdown-item" to="/modselection" active-class="active">Select from Dropdown</RouterLink>
               <RouterLink class="dropdown-item" to="/" active-class="active">Import from File</RouterLink>
             </ul>
           </li>

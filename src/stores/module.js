@@ -1,20 +1,33 @@
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import ModuleCsv from './ModuleList.csv'
 
 export const useModuleStore = defineStore('module', () => {
   const moduleList = ModuleCsv
-  const uniqueModuleList = computed(() => {
+  const uniqueModuleDict = computed(() => {
     let uniqueList = []
-    let uniqueDict = []
+    let uniqueDict = {}
     moduleList.forEach((module) => {
       if (!uniqueList.includes(module['Course Code'])) {
         uniqueList.push(module['Course Code'])
-        uniqueDict.push(module)
+        uniqueDict[module['Course Code']] = module['Course Title']
       }
     })
     return uniqueDict
+  })
+
+  const moduleBasket = computed(() => {
+    let moduleBasket = {}
+    moduleList.forEach((module) => {
+      if (module['Course Areas'] in moduleBasket) {
+        moduleBasket[module['Course Areas']].push(module['Course Code'])
+      } else {
+        moduleBasket[module['Course Areas']] = [module['Course Code']]
+      }
+    })
+    console.log(moduleBasket)
+    return moduleBasket    
   })
   // function increment() {
   //   count.value++
@@ -23,5 +36,5 @@ export const useModuleStore = defineStore('module', () => {
   //   count.value--
   // }
 
-  return { moduleList, uniqueModuleList }
+  return { moduleList, uniqueModuleDict, moduleBasket }
 })
